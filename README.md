@@ -91,14 +91,13 @@ maradns_zones: []
           - { name: "_sip._udp", val: "0 0 5060 sip.%" }
         fqdn4:
           - { domain: "mx", ip: "7.7.7.7" }
-        ptr:
-          - { domain: "www", ip: "8.8.8.8" }
         a:
           - { ip: 8.8.8.8 }
           - { domain: 'www', ip: 8.8.8.8 }
           - { domain: 'sip', ip: 6.6.6.6 }
       # the following zone is disabled:
       - name: alice.com
+        email: postmaster@alice.com
         enabled: False
 
 ```
@@ -127,9 +126,6 @@ www.%	8.8.8.8
 sip.%	6.6.6.6 
 
 mx.%	FQDN4	7.7.7.7 
-
-www.%	PTR	8.8.8.8 
-
 
 _sip._udp.%	SRV	0 0 5060 sip.% 
 

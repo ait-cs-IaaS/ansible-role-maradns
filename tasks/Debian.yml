@@ -1,4 +1,8 @@
 - name: Install Maradns
   apt: name=maradns update_cache="yes" state=latest
+  tags: [ install ]
 
-
+- name: Install Maradns-Zoneserver
+  apt: name=maradns update_cache="yes" state=latest
+  when: maradns_zoneserver != False
+  tags: [install]

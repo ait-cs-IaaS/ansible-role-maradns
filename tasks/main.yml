@@ -9,10 +9,8 @@
     group: root
     mode: 0644
   notify: maradns restart
+  tags: [config]
 
-- name: Install Maradns-Zoneserver
-  apt: name=maradns update_cache="yes" state=latest
-  when: maradns_zoneserver != False
 
 - name: Create Zonefiles
   template: 
@@ -23,3 +21,4 @@
     mode: 0644
   with_items: '{{ maradns_zones }}'
   notify: maradns restart
+  tags: [config]
