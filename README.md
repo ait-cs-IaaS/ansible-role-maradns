@@ -48,7 +48,11 @@ To allow recursive-dns change this:
 ```
 maradns_recursive_acl: False
 ```
+To specify a max memory allocation limit or disable the feature (set to `0`) set the following:
 
+```
+maradns_max_mem: <limit in bytes>
+```
 MaraDNS supports different csv-formats:
 
 ```
