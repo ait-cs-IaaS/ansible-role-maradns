@@ -73,6 +73,10 @@ max_chain = 8
 max_ar_chain = 1
 # The maximum number of records to show total for a given question
 max_total = 20
+{% if maradns_max_mem is defined %}
+# max memory to allocate set to 0 to allow unbound the default is arround 2mb + 1536bytes*records
+max_mem = {{ maradns_max_mem }}
+{% endif %}
 
 # The number of messages we log to stdout
 # 0: No messages except for fatal parsing errors and the legal disclaimer
